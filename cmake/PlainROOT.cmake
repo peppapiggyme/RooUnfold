@@ -37,6 +37,9 @@ if(${ROOT_FOUND})
   
   # link everything together at the end
   target_link_libraries( RooUnfold ${ROOT_LIBRARIES} )
+
+  # for this to be available in slibing projects
+  target_include_directories( RooUnfold PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
   
   # Add all targets to the build-tree export set
   export(TARGETS RooUnfold FILE "${PROJECT_BINARY_DIR}/RooUnfoldTargets.cmake")
